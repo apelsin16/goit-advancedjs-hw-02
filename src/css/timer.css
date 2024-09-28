@@ -63,24 +63,3 @@ button:disabled {
     text-align: center;
     text-transform: uppercase;
 }
-
-.message {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    background: #EF4040;
-    border-bottom: 2px solid #FFBEBE;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-}
-
-.message button {
-    background-color: transparent;
-}
-
-.iziToast-body {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}

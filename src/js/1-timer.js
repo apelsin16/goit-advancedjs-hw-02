@@ -43,10 +43,7 @@ const options = {
             toggleFieldDisabled('button', true);
             iziToast.error({
                 message: 'Please choose a date in the future',
-                messageColor: '#FFFFFF',
-                class: 'message',
-                icon: 'fa fa-circle-xmark',
-                iconColor: '#FFFFFF',
+                position: 'topRight',
                 timeout: 3000
             });
         } else {
