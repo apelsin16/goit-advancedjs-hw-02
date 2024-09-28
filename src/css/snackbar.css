@@ -1,0 +1,23 @@
+label {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    color: #2E2F42;
+}
+
+.form button {
+    width: 100%;
+    margin-top: 24px;
+}
+
+fieldset {
+    border: 1px solid #808080;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 16px;
+}
+
+fieldset label {
+    flex-direction: row;
+}

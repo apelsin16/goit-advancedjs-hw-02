@@ -1,0 +1,86 @@
+input {
+    border: 1px solid #808080;
+    border-radius: 8px;
+    padding: 8px 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    outline: none;
+}
+
+input:hover {
+    border-color: #000000;
+}
+
+input:active {
+    border-color: #4E75FF;
+}
+
+input[disabled=true] {
+    background: #FAFAFA;
+    cursor: not-allowed;
+}
+
+button {
+    width: 75px;
+    height: 40px;
+    background: #4E75FF;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    letter-spacing: 0.04em;
+}
+
+button:hover {
+    background: #6C8CFF;
+}
+
+button:disabled {
+    background: #CFCFCF;
+    color: #989898;
+    cursor: not-allowed;
+}
+
+.timer {
+    display: flex;
+    gap: 24px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    color: #2E2F42;
+}
+
+.field .value {
+    font-size: 40px;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
+.field .label {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.message {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: #EF4040;
+    border-bottom: 2px solid #FFBEBE;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.message button {
+    background-color: transparent;
+}
+
+.iziToast-body {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
