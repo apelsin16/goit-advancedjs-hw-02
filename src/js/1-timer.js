@@ -2,6 +2,7 @@ import flatpickr from "flatpickr";
 import iziToast from "izitoast";
 
 import "flatpickr/dist/flatpickr.min.css";
+import "izitoast/dist/css/iziToast.min.css";
 
 function convertMs(ms) {
     // Number of milliseconds per unit of time
@@ -40,27 +41,27 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
         if(selectedDates[0].getTime() < Date.now()) {            
-            toggleFieldDisabled('button', true);
+            toggleFieldDisabled('button[data-start]', true);
             iziToast.error({
                 message: 'Please choose a date in the future',
                 position: 'topRight',
                 timeout: 3000
             });
         } else {
-            toggleFieldDisabled('button', false);
+            toggleFieldDisabled('button[data-start]', false);
             selectedDate = selectedDates[0].getTime();
         }
     },
     onOpen() {
-        toggleFieldDisabled('button', false);
+        toggleFieldDisabled('button[data-start]', false);
     }
 };
 
 flatpickr('#datetime-picker', options);
 
 const startTimer = () => {
-    toggleFieldDisabled('button', true);
-    toggleFieldDisabled('input', true);
+    toggleFieldDisabled('button[data-start]', true);
+    toggleFieldDisabled('#datetime-picker', true);
     const days = document.querySelector('span.value[data-days]');
     const hours = document.querySelector('span.value[data-hours]');
     const minutes = document.querySelector('span.value[data-minutes]');
@@ -73,8 +74,8 @@ const startTimer = () => {
         minutes.innerHTML = String(time.minutes).padStart(2, '0');
         seconds.innerHTML = String(time.seconds).padStart(2, '0');
         if(selectedDate - Date.now() < 1000) {
-            toggleFieldDisabled('button', false);
-            toggleFieldDisabled('input', false);
+            toggleFieldDisabled('button[data-start]', false);
+            toggleFieldDisabled('#datetime-picker', false);
             clearInterval(timer);
         }
     }, 1000);
@@ -82,5 +83,5 @@ const startTimer = () => {
     
 }
 
-const button = document.querySelector('button');
+const button = document.querySelector('button[data-start]');
 button.addEventListener('click', startTimer);
